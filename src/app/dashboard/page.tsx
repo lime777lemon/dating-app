@@ -27,11 +27,21 @@ export default function Dashboard() {
   const handleLike = () => {
     // TODO: Implement like functionality
     console.log('Liked profile:', currentProfile.id);
+    // Update profile after like
+    setCurrentProfile({
+      ...currentProfile,
+      id: (parseInt(currentProfile.id) + 1).toString(),
+    });
   };
 
   const handleDislike = () => {
     // TODO: Implement dislike functionality
     console.log('Disliked profile:', currentProfile.id);
+    // Update profile after dislike
+    setCurrentProfile({
+      ...currentProfile,
+      id: (parseInt(currentProfile.id) + 1).toString(),
+    });
   };
 
   return (

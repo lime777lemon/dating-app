@@ -51,8 +51,20 @@ export default function Messages() {
     e.preventDefault();
     if (!newMessage.trim()) return;
 
-    // TODO: Implement message sending functionality
-    console.log('Sending message:', newMessage);
+    // Create new message
+    const message: Message = {
+      id: (selectedChat.messages.length + 1).toString(),
+      senderId: 'me',
+      text: newMessage,
+      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+    };
+
+    // Update chat with new message
+    setSelectedChat({
+      ...selectedChat,
+      messages: [...selectedChat.messages, message],
+    });
+
     setNewMessage('');
   };
 

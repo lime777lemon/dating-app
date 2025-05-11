@@ -16,6 +16,14 @@ export default function Profile() {
     ],
   });
 
+  const handleEditProfile = () => {
+    // TODO: Implement profile editing functionality
+    setProfile({
+      ...profile,
+      bio: 'Updated bio: ' + profile.bio,
+    });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-100 to-indigo-100">
       <div className="py-12 px-4 sm:px-6 lg:px-8 pb-24">
@@ -53,6 +61,7 @@ export default function Profile() {
               </div>
 
               <button
+                onClick={handleEditProfile}
                 className="w-full bg-pink-500 text-white py-2 px-4 rounded-lg hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
               >
                 Edit Profile
